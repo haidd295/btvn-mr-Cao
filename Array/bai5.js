@@ -1,13 +1,18 @@
-var arr = [1, 2, 3, 5, 2, 1, 4]
-var sort_arr = arr.slice().sort();
-var duplicates = [];
-for (var i = 0; i < arr.length; i++) {
-    if (sort_arr[i + 1] == sort_arr[i]) {
-        duplicates.push(sort_arr[i]);
-    } else {
-        if (!duplicates.includes(sort_arr[i])) {
+function CommonItemsArray(array1, array2) {
+    var arr = [];
+    for (var i = 0; i < array1.length; i++) {
+        for (var j = 0; j < array2.length; j++) {
+            if (array1[i] == array2[j]) {
+                arr.push(array1[i]);
+            }
         }
     }
+    return arr; // Return the common items
 }
+var array1 = ["js", "sau", "sac"];
+var array2 = ["js", "non"];
 
-console.log(duplicates);
+// Get common items of both array1, array2
+var a = CommonItemsArray(array1, array2);
+console.log(a);
+//[ 'js' ]
